@@ -1,0 +1,173 @@
+.body {
+  margin: 0;
+  background-color: #dbdada;
+}
+
+.header {
+  background-color: #1b7413;
+  padding: 40px;
+  margin-bottom: 100px;
+}
+
+.title {
+  margin: 0%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: aliceblue;
+}
+
+.footer {
+  background-color: #1b7413;
+  margin-top: 70px;
+  padding: 15px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #e5e7eb;
+  font-size: 17px;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-right: 300px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: #2196f3;
+  border: 5px solid rgba(0, 0, 0, 0.8);
+}
+
+.grid-item {
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.pieceimage {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: -8px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.maincontent {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-left: 175px;
+}
+
+.settings {
+  max-width: 300px;
+  height: 400px;
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 85px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+}
+
+.labels > p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+.labelsandboxes {
+  display: flex;
+  gap: 100px;
+}
+
+.btn {
+  background-color: #3882f6;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.helpercolour {
+  margin-left: -10px;
+}
+
+.highlightcolour {
+  margin-left: -10px;
+}
+
+[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  color: dodgerblue;
+  vertical-align: middle;
+  background: none;
+  border: 0;
+  outline: 0;
+  flex-grow: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: background 300ms;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 12px;
+  float: right;
+  display: 1;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 49px;
+}
+
+.descriptionsection {
+  margin-top: 30px;
+  max-width: 300px;
+  margin-left: -200px;
+}
+
+.descriptiontitle {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  text-decoration: underline;
+  pointer-events: none;
+  user-select: none;
+}
+
+.description {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  pointer-events: none;
+  user-select: none;
+}

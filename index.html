@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="script.js" defer></script>
+    <title>Chess</title>
+  </head>
+
+  <body class="body">
+    <div class="header">
+      <h1 class="title">Chess!</h1>
+    </div>
+
+    <div class="maincontent">
+      <div class="settings">
+        <div class="labelsandboxes">
+          <div class="labels">
+            <p>Select</p>
+            <p>Highlight</p>
+            <p>Helper</p>
+            <p>Opponent</p>
+          </div>
+
+          <div class="checkboxes">
+            <input
+              class="highlightcolour"
+              type="color"
+              id="highlightcolour"
+              name="head"
+              value="#3ad32c"
+              onchange="setColours()"
+            />
+            <input
+              class="helpercolour"
+              type="color"
+              id="helpercolour"
+              name="head"
+              value="#2596be"
+              onchange="setColours()"
+            />
+            <input
+              type="checkbox"
+              id="helpercheck"
+              onchange="toggleHelper()"
+              checked
+            />
+            <input
+              type="checkbox"
+              id="opponentcheck"
+              onchange="toggleOpponent()"
+              unchecked
+            />
+          </div>
+        </div>
+        <button class="btn" onclick="resetGame()">
+          <i class="fa fa-trash"></i> Reset Game
+        </button>
+      </div>
+
+      <div class="board">
+        <div class="grid-container">
+          <div class="grid-item" id="a8" data-value="R">
+            <img src="/ChessPieces/Rook-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="b8" data-value="Kn">
+            <img src="/ChessPieces/Knight-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="c8" data-value="B">
+            <img src="/ChessPieces/Bishop-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="d8" data-value="Q">
+            <img src="/ChessPieces/Queen-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="e8" data-value="K">
+            <img src="/ChessPieces/King-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="f8" data-value="B">
+            <img src="/ChessPieces/Bishop-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="g8" data-value="Kn">
+            <img src="/ChessPieces/Knight-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="h8" data-value="R">
+            <img src="/ChessPieces/Rook-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="a7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="b7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="c7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="d7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="e7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="f7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="g7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="h7" data-value="P">
+            <img src="/ChessPieces/Pawn-Black.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="a6"></div>
+          <div class="grid-item" id="b6"></div>
+          <div class="grid-item" id="c6"></div>
+          <div class="grid-item" id="d6"></div>
+          <div class="grid-item" id="e6"></div>
+          <div class="grid-item" id="f6"></div>
+          <div class="grid-item" id="g6"></div>
+          <div class="grid-item" id="h6"></div>
+          <div class="grid-item" id="a5"></div>
+          <div class="grid-item" id="b5"></div>
+          <div class="grid-item" id="c5"></div>
+          <div class="grid-item" id="d5"></div>
+          <div class="grid-item" id="e5"></div>
+          <div class="grid-item" id="f5"></div>
+          <div class="grid-item" id="g5"></div>
+          <div class="grid-item" id="h5"></div>
+          <div class="grid-item" id="a4"></div>
+          <div class="grid-item" id="b4"></div>
+          <div class="grid-item" id="c4"></div>
+          <div class="grid-item" id="d4"></div>
+          <div class="grid-item" id="e4"></div>
+          <div class="grid-item" id="f4"></div>
+          <div class="grid-item" id="g4"></div>
+          <div class="grid-item" id="h4"></div>
+          <div class="grid-item" id="a3"></div>
+          <div class="grid-item" id="b3"></div>
+          <div class="grid-item" id="c3"></div>
+          <div class="grid-item" id="d3"></div>
+          <div class="grid-item" id="e3"></div>
+          <div class="grid-item" id="f3"></div>
+          <div class="grid-item" id="g3"></div>
+          <div class="grid-item" id="h3"></div>
+          <div class="grid-item" id="a2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="b2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="c2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="d2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="e2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="f2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="g2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="h2" data-value="P">
+            <img src="/ChessPieces/Pawn-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="a1" data-value="R">
+            <img src="/ChessPieces/Rook-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="b1" data-value="Kn">
+            <img src="/ChessPieces/Knight-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="c1" data-value="B">
+            <img src="/ChessPieces/Bishop-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="d1" data-value="Q">
+            <img src="/ChessPieces/Queen-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="e1" data-value="K">
+            <img src="/ChessPieces/King-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="f1" data-value="B">
+            <img src="/ChessPieces/Bishop-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="g1" data-value="Kn">
+            <img src="/ChessPieces/Knight-White.png" class="pieceimage" />
+          </div>
+          <div class="grid-item" id="h1" data-value="R">
+            <img src="/ChessPieces/Rook-White.png" class="pieceimage" />
+          </div>
+        </div>
+      </div>
+
+      <div class="descriptionsection">
+        <h2 class="descriptiontitle">Description</h2>
+        <p class="description">
+          This is my second small project using Javascript, HTML and CSS. There
+          are a few bugs with the colouring of the board and the 'AI' opponent.
+        </p>
+        <p class="description">
+          For the best experience, turn off the 'opponent' setting on the left
+          and move some of your pieces. Keep the 'helper' setting enabled to see
+          what valid moves your selected piece can make. Once you have selected
+          a piece, click on a valid square to move it.
+        </p>
+        <p class="description">
+          The 'select' setting will allow you to change the colour of selected
+          pieces. The 'highlight' settings will allow you to change the colour
+          of valid moves.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="copyrighttext">Copyright &copy; Marco Freemantle 2022</p>
+    </div>
+  </body>
+</html>
